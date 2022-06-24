@@ -6,19 +6,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body{
-    background-color: orange;
-    color: white;
+    background-color: #d59bf6;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
 
 }
 
 header {
-    font-size: 1.5rem;
-
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    width: 20%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 header,
@@ -36,17 +44,32 @@ form input, form button{
     background: white;
 }
 
-form button{
-    color: orange;
-    background: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
+form input{
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 24rem;
 
 }
 
+form input:focus{
+    outline: none;
+}
+
+form button{
+    color: rgb(0, 0, 0);
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    right: 3%;
+}
+
+i {
+    font-size: large;
+}
+
 form button:hover{
-    background: orange;
-    color: whitesmoke;
+    color: rgb(114, 88, 219);
 }
 
 .todo-container{
@@ -61,13 +84,18 @@ form button:hover{
 }
 
 .todo{
+    border: 2px solid black;
     margin: 0.5rem;
     background: white;
     color: black;
-    font-size: 1.5rem;
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.5s ease;
+    width: 41rem;
+    border-radius: 10px;
 }
 
 .todo li{
@@ -77,18 +105,155 @@ form button:hover{
 
 .trash-btn,
 .complete-btn{
-    background: orangered;
     color: white;
     border: none;
+    background: white;
     padding: 1rem;
     cursor: pointer;
     font-size: 1rem;
+    transition: all 0.5s ease;
+    border-radius: 10px;
 }
 
-.complete-btn{
-    background: rgb(0, 156, 208);
+.trash-btn{
+    float: right;
+}
+
+
+
+
+.complete-btn:hover{
+    color: blue;
+}
+
+.trash-btn:hover{
+    color: red;
 }
 
 .todo-item{
     padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check{
+    pointer-events: none;
+}
+
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5 ;
+}
+
+.fall{
+    transform: translateY(8rem) rotateZ(0deg);
+    opacity: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0%;
+    background-color: transparent;
+}
+/*CUSTOM SELECTOR */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background-image: none;
+    position: relative;
+    width: 12em;
+    height: 4rem;
+    cursor: pointer;
+    padding: 1rem;
+  }
+  
+  /* Custom Select */
+  .select {
+    position: relative;
+    overflow: hidden;
+    height: 4rem;
+    left: 3rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 12rem;
+    padding-right: 5rem;
+    margin-right: 15px;
+  }
+  select {
+    color: #000000;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    background: #8ef6e4;
+    cursor: pointer;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 100px;
+    height: 50px;
+    border: 2px solid black;
+  }
+
+  @media (max-width: 768px) and (min-width: 320px) {
+    .todo{
+            width: 15rem;
+        }
+    form input{
+        width: 15rem;
+        display: flex;
+    }
+
+    .select{
+        width: 12rem;
+        height: 3.9rem;
+    }
+    form button {
+        position: relative;
+        right: 23%;
+        height: 70%;
+
+    }
+    form input {
+        width: 15rem;
+        display: block;
+        margin-left: 40px;
+        margin-bottom: 10px;
+        margin-right: auto;
+    }
+}
+
+
+@media (max-width: 800px) {
+    form input{
+        position: relative;
+        left: 1rem;
+        height: 4.8rem ;
+    }
+}
+
+@media (max-width: 1025px) and (min-width: 320px){
+    form input{
+        position: relative;
+        left: 0.5rem;
+        width: 26rem;
+    }
+    .select{
+        width: 11rem;
+        position: relative;
+    }
+
+    .todo{
+
+    }
 }
