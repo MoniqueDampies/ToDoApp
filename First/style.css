@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    border: none; 
+    border-style: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+    font-size: large; 
+    background-color: #ffffff;
+  }
 
 * {
   margin: 0
@@ -9,7 +22,6 @@
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
-  background-color: #e1e3ea;
   height: 100vh;
   font-family: sans-serif;
 }
@@ -27,68 +39,83 @@
 .app h1 {
   color: white;
   font-size: 40px;
-  padding: 10px 0;
+  padding: 10px;
   text-align: center;
-  border-radius: .5rem .5rem 0 0;
-  background-color: #de3f53;
+  border-radius: .5rem .5rem;
+  background-color: #000000;
   font-family: "Rajdhani", sans-serif;
 }
 
 .app form {
   display: flex;
   width: 100%;
-  background-color: #262e4c;
+  border-radius: .5rem .5rem;
+  background-color: #000000;
 }
 
 .app form input {
   border: none;
-  background-color: #3c4979;
-  font-size: 18px;
+  outline: none;
+  background-color: #000000;
+  font-size: 15px;
   color: white;
   padding: 10px;
+  height: 43px;
   width: 90%;
 }
 
 .app form button {
   border: none;
   color: white;
-  background-color: #1dd2af;
+  background-color: #000000;
   font-size: 25px;
   font-weight: 600;
-  height: 42px;
-  width: 10%;
+  float: inline-end;
+  padding-top: 2px;
+  width: 8%;
+}
+.fa-circle-plus:hover{
+    color: rgb(58, 133, 58);
+    
+
+}
+
+.fa-sort:hover{
+    color: cadetblue;
+
 }
 
 .app ul {
   list-style: none;
-  color: #e0e0e0;
+  color: #ffffff;
   padding: 0;
 }
 
 .app ul li {
-  padding: 10px;
-  background-color: #262e4c;
-  border-bottom: 1px solid #3a4674;
+  padding: 20px;
+  background-color: #000000;
 }
 
 .check {
   width: 0.8em;
   height: 0.8em;
   cursor: pointer;
-  border-radius: 50%;
   background-color: white;
-  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
   -webkit-appearance: none;
 }
 
 .check:checked {
-  background-color: #1dd2af;
+    border-radius: 74px;
+    background: #111124;
+    box-shadow: inset 11px -11px 21px #07070e,
+                inset -11px 11px 21px #1b1b3a;
 }
 
 .task {
   font-size: 18px;
   padding: 0 10px;
-  width: fit-content;
+  width: 90%;
   background: transparent;
   border: none;
   color: #fff;
@@ -101,13 +128,14 @@
 .app ul li i {
   float: right;
   cursor: pointer;
+  color: rgba(255, 82, 82, 0.655);
 }
 
 .app ul li i:hover {
-  color: rgb(255, 82, 82);
+  color: rgb(255, 0, 0);
 }
 
 .completed {
-  color: rgba(192, 192, 192, 0.8);
+  color: rgba(87, 78, 78, 0.8);
   text-decoration: line-through;
 }

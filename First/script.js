@@ -1,11 +1,11 @@
-// On app load, get all tasks from localStorage
 window.onload = loadTasks;
 
 // On form submit add task
-document.querySelector("form").addEventListener("submit", e => {
+document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
   addTask();
 });
+
 
 function loadTasks() {
   // check if localStorage has any tasks
@@ -16,12 +16,16 @@ function loadTasks() {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
 
   // Loop through the tasks and add them to the list
-  tasks.forEach(task => {
+  tasks.forEach((task) => {
     const list = document.querySelector("ul");
     const li = document.createElement("li");
-    li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
-          <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-          <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+    li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${
+      task.completed ? "checked" : ""
+    }>
+       <input type="text" value="${task.task}" class="task ${
+      task.completed ? "completed" : ""
+    }" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+       <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
     list.insertBefore(li, list.children[0]);
   });
 }
@@ -41,13 +45,19 @@ function addTask() {
   }
 
   // add task to local storage
-  localStorage.setItem("tasks", JSON.stringify([...JSON.parse(localStorage.getItem("tasks") || "[]"), { task: task.value, completed: false }]));
+  localStorage.setItem(
+    "tasks",
+    JSON.stringify([
+      ...JSON.parse(localStorage.getItem("tasks") || "[]"),
+      { task: task.value, completed: false },
+    ])
+  );
 
   // create list item, add innerHTML and append to ul
   const li = document.createElement("li");
   li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
-      <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-      <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+   <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+   <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
   list.insertBefore(li, list.children[0]);
   // clear input
   task.value = "";
@@ -55,7 +65,7 @@ function addTask() {
 
 function taskComplete(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
-  tasks.forEach(task => {
+  tasks.forEach((task) => {
     if (task.task === event.nextElementSibling.value) {
       task.completed = !task.completed;
     }
@@ -66,7 +76,7 @@ function taskComplete(event) {
 
 function removeTask(event) {
   let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
-  tasks.forEach(task => {
+  tasks.forEach((task) => {
     if (task.task === event.parentNode.children[1].value) {
       // delete task
       tasks.splice(tasks.indexOf(task), 1);
@@ -94,7 +104,7 @@ function editTask(event) {
     return;
   }
   // task already exist
-  tasks.forEach(task => {
+  tasks.forEach((task) => {
     if (task.task === event.value) {
       alert("Task already exist!");
       event.value = currentTask;
@@ -102,7 +112,7 @@ function editTask(event) {
     }
   });
   // update task
-  tasks.forEach(task => {
+  tasks.forEach((task) => {
     if (task.task === currentTask) {
       task.task = event.value;
     }
@@ -110,3 +120,5 @@ function editTask(event) {
   // update local storage
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
+
