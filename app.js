@@ -11,7 +11,6 @@ todoList.addEventListener("click", deleteTodo);
 filterOption.addEventListener("click", filterTodo);
 
 //Functions
-
 function addTodo(e) {
   e.preventDefault();
 
@@ -157,9 +156,3 @@ function getTodos() {
     todoList.appendChild(todoDiv);
   });
 }
-// update task
-  todo.forEach((todo) => {
-    if (todo.todo === currentTask) {
-        todo.todo = event.value;
-    }
-  });

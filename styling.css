@@ -2,14 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
 }
 
-body{
+body {
     background-color: #d59bf6;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
@@ -37,25 +37,26 @@ form {
     align-items: center;
 }
 
-form input, form button{
+form input,
+form button {
     padding: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border: none;
     background: white;
 }
 
-form input{
+form input {
     border: 2px solid black;
     border-radius: 10px;
     width: 24rem;
 
 }
 
-form input:focus{
+form input:focus {
     outline: none;
 }
 
-form button{
+form button {
     color: rgb(0, 0, 0);
     background: white;
     cursor: pointer;
@@ -68,22 +69,22 @@ i {
     font-size: large;
 }
 
-form button:hover{
+form button:hover {
     color: rgb(114, 88, 219);
 }
 
-.todo-container{
+.todo-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.todo-list{
+.todo-list {
     min-width: 30%;
     list-style: none;
 }
 
-.todo{
+.todo {
     border: 2px solid black;
     margin: 0.5rem;
     background: white;
@@ -98,14 +99,14 @@ form button:hover{
     border-radius: 10px;
 }
 
-.todo li{
+.todo li {
     flex: 1;
 
 }
 
 .trash-btn,
-.complete-btn{
-    color: white;
+.complete-btn {
+    color: rgba(45, 41, 41, 0.278);
     border: none;
     background: white;
     padding: 1rem;
@@ -115,37 +116,37 @@ form button:hover{
     border-radius: 10px;
 }
 
-.trash-btn{
+.trash-btn {
     float: right;
 }
 
 
 
 
-.complete-btn:hover{
-    color: blue;
+.complete-btn:hover {
+    color: rgb(37, 156, 83);
 }
 
-.trash-btn:hover{
+.trash-btn:hover {
     color: red;
 }
 
-.todo-item{
+.todo-item {
     padding: 0rem 0.5rem;
 }
 
 .fa-trash,
-.fa-check{
+.fa-check {
     pointer-events: none;
 }
 
 
-.completed{
+.completed {
     text-decoration: line-through;
-    opacity: 0.5 ;
+    opacity: 0.5;
 }
 
-.fall{
+.fall {
     transform: translateY(8rem) rotateZ(0deg);
     opacity: 0;
 }
@@ -154,6 +155,7 @@ form button:hover{
     width: 0%;
     background-color: transparent;
 }
+
 /*CUSTOM SELECTOR */
 select {
     -webkit-appearance: none;
@@ -169,10 +171,10 @@ select {
     height: 4rem;
     cursor: pointer;
     padding: 1rem;
-  }
-  
-  /* Custom Select */
-  .select {
+}
+
+/* Custom Select */
+.select {
     position: relative;
     overflow: hidden;
     height: 4rem;
@@ -182,13 +184,15 @@ select {
     width: 12rem;
     padding-right: 5rem;
     margin-right: 15px;
-  }
-  select {
+}
+
+select {
     color: #000000;
     cursor: pointer;
-  }
-  /* Arrow */
-  .select::after {
+}
+
+/* Arrow */
+.select::after {
     content: "\25BC";
     position: absolute;
     top: 0;
@@ -203,27 +207,33 @@ select {
     border-radius: 100px;
     height: 50px;
     border: 2px solid black;
-  }
+}
 
-  @media (max-width: 768px) and (min-width: 320px) {
-    .todo{
-            width: 15rem;
-        }
-    form input{
+
+@media (max-width: 768px) and (min-width: 320px) {
+    .todo {
+        width: 25.7rem;
+        margin-left: 6.3rem;
+    }
+
+    form input {
         width: 15rem;
         display: flex;
     }
 
-    .select{
+    .select {
         width: 12rem;
         height: 3.9rem;
+        margin-left: 2rem;
     }
+
     form button {
         position: relative;
         right: 23%;
         height: 70%;
 
     }
+
     form input {
         width: 15rem;
         display: block;
@@ -235,25 +245,122 @@ select {
 
 
 @media (max-width: 800px) {
-    form input{
+    form input {
         position: relative;
-        left: 1rem;
-        height: 4.8rem ;
+        height: 4rem;
+        width: 80%;
+        display: block;
+        margin-left: 20%;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    input {
+        width: 80%;
+
+    }
+
+    select,
+    .select {
+        display: block;
+        margin-right: 43%;
+        margin-left: auto;
+    }
+
+    form button {
+        height: 3rem;
+        margin-right: 30px;
+    }
+
+    .todo-list {
+        width: 90%;
     }
 }
 
-@media (max-width: 1025px) and (min-width: 320px){
-    form input{
+@media (max-width: 1025px) and (min-width: 320px) {
+    form input {
         position: relative;
         left: 0.5rem;
         width: 26rem;
     }
-    .select{
+
+    .select {
         width: 11rem;
         position: relative;
     }
+}
 
-    .todo{
+@media (max-width: 428px) and (min-width: 320px) {
+    form input {
+        width: 16rem;
+    }
 
+    form button {
+        margin-right: 1px;
+    }
+
+    .todo {
+        width: 16rem;
+        margin-left: 45px;
+    }
+
+    .select {
+        width: 12rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        left: 25px;
+    }
+}
+
+@media (max-width: 378px) and (min-width: 320px) {
+    form input {
+        position: relative;
+        margin-left: 60px;
+    }
+
+    form button {
+        position: relative;
+        right: 60px;
+    }
+
+    .todo {
+        position: relative;
+        margin-left: 20px;
+    }
+
+    .select {
+        position: relative;
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 322px) and (min-width: 320px) {
+    form input {
+        position: relative;
+        margin-left: 25px;
+
+    }
+
+    form button {
+        position: relative;
+        right: 40px;
+    }
+
+    .todo {
+        position: relative;
+        margin-left: -9px;
+    }
+
+    .select {
+        position: relative;
+        margin-left: 50px;
     }
 }

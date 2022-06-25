@@ -17,15 +17,15 @@
 <body>
   <header>To Do List</header>
   <form class="d-flex flex-wrap">
-    <input type="text" class="todo-input" />
+    <input type="text" class="todo-input" placeholder="Add an item..."required! />
     <button class="todo-button" type="submit">
       <i class="fas fa-plus-square"></i>
     </button>
     <div class="select">
-      <select name="todos" class="filter-todo">
-        <option value="all">All</option>
-        <option value="completed">Completed</option>
-        <option value="uncompleted">Incompleted</option>
+      <select name="todos" class="filter-todo rounded-3">
+        <option id="options" value="all">All</option>
+        <option id="options" value="completed">Completed</option>
+        <option id="options" value="uncompleted">Incompleted</option>
       </select>
     </div>
   </form>
